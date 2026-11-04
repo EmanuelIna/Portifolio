@@ -1,0 +1,490 @@
+@reference "../../app/globals.css";
+@font-face {
+  font-family: "GF Fraunces";
+  src: url("/therapy/fonts/fraunces-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GF Fraunces";
+  src: url("/therapy/fonts/fraunces-latin-italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GF Nunito";
+  src: url("/therapy/fonts/nunito-latin.woff2") format("woff2");
+  font-weight: 200 1000;
+  font-style: normal;
+  font-display: swap;
+}
+.site {
+  --theme-primary: #6fa89c;
+  --theme-secondary: #e8d3bd;
+  --theme-accent: #e0607a;
+  @apply min-h-screen bg-[#faf6ee] text-[#3b3b47];
+  font-family: "GF Nunito", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.site *,
+.site *::before,
+.site *::after {
+  box-sizing: border-box;
+}
+.site ::selection {
+  background: #e8d3bd;
+  color: #3b3b47;
+}
+.site p {
+  color: #65636a;
+  line-height: 1.75;
+  margin: 0;
+  font-size: 15px;
+}
+.site h1,
+.site h2,
+.site h3 {
+  margin: 0;
+  font-family: "GF Fraunces", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  color: #3b3b47;
+}
+.site h2 {
+  font-size: clamp(31px, 4vw, 47px);
+  line-height: 1.18;
+}
+.site h3 {
+  font-size: 23px;
+  line-height: 1.3;
+}
+.site em {
+  color: #597c61;
+  font-weight: 400;
+}
+.site a {
+  color: inherit;
+  text-decoration: none;
+}
+.site a:focus-visible,
+.site button:focus-visible {
+  outline: 3px solid #497b70;
+  outline-offset: 5px;
+}
+.site button {
+  font-family: inherit;
+}
+.container {
+  @apply mx-auto w-[calc(100%-40px)] max-w-[1180px] sm:w-[calc(100%-64px)];
+}
+.skipLink {
+  @apply fixed -top-20 left-5 z-[100] rounded-xl bg-[#3b3b47] p-3 text-white;
+}
+.skipLink:focus {
+  top: 10px;
+  color: white;
+}
+.header {
+  @apply sticky top-0 z-40 border-b border-[#deded2] bg-[#faf6ee]/95;
+  backdrop-filter: blur(12px);
+}
+.header > .container {
+  @apply relative flex min-h-[82px] items-center justify-between gap-3;
+}
+.brand {
+  @apply inline-flex items-center gap-2;
+  font-family: "GF Fraunces", Georgia, serif;
+  font-size: 19px;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+  white-space: nowrap;
+}
+.brandIcon {
+  @apply hidden h-10 w-10 items-center justify-center rounded-full border border-[#c5d4b4] text-[#789859] sm:flex;
+}
+.brand small {
+  @apply mt-1 block text-[7px] font-semibold tracking-[1.4px];
+  font-family: "GF Nunito", Arial, sans-serif;
+  color: #737667;
+}
+.desktopNav {
+  @apply hidden items-center gap-7 text-[13px] lg:flex;
+}
+.desktopNav a:hover {
+  color: #4b7867;
+}
+.headerCta {
+  @apply rounded-full bg-primary px-4 py-2.5 text-[11px] font-extrabold sm:px-5 sm:text-[13px];
+  color: #203c35 !important;
+  white-space: nowrap;
+}
+.menuButton {
+  @apply flex h-10 w-9 shrink-0 items-center justify-center border-0 bg-transparent text-[#3b3b47] lg:hidden;
+}
+.mobileNav {
+  @apply absolute top-full right-0 left-0 flex flex-col rounded-b-2xl border border-[#d9decf] bg-[#faf6ee] px-5 py-2 shadow-lg;
+}
+.mobileNav a {
+  @apply border-b border-[#e6e5da] py-4 text-sm;
+}
+.mobileNav a:last-child {
+  @apply border-0 font-bold text-[#3c6b5d];
+}
+.hero {
+  @apply relative grid gap-10 pt-11 pb-10 md:grid-cols-2 md:items-center md:gap-8 md:pt-16 md:pb-16 lg:gap-16 lg:pt-20 lg:pb-20;
+}
+.heroTag {
+  @apply mb-6 inline-flex items-center gap-2 rounded-full bg-[#eaf0df] px-3 py-2 text-[8px] font-extrabold tracking-[1px] sm:text-[9px];
+  color: #536a40;
+}
+.heroTag > span {
+  @apply h-1.5 w-1.5 rounded-full bg-[#8db36a];
+}
+.hero h1 {
+  font-size: clamp(37px, 4.3vw, 60px);
+  line-height: 1.12;
+}
+.heroCopy > p {
+  @apply mt-6 mb-7 max-w-[450px];
+  font-size: 15px;
+}
+.site .button {
+  @apply inline-flex max-w-full items-center justify-center gap-3 rounded-[16px] bg-primary px-5 py-3.5 text-sm font-extrabold shadow-[0_8px_25px_#6fa89c22];
+  color: #203c35;
+  min-height: 50px;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.button:hover,
+.headerCta:hover {
+  background: #82b9ad;
+  box-shadow: 0 8px 28px #6fa89c33;
+}
+.button svg {
+  @apply shrink-0;
+}
+.heroLocation {
+  @apply mt-5 flex flex-wrap items-center gap-2 text-[10px] text-[#74776c] sm:text-[11px];
+}
+.heroLocation > svg {
+  color: #78965d;
+}
+.heroVisual {
+  @apply relative mx-auto w-full max-w-[410px] px-5 pt-4 pb-6 md:max-w-[490px] md:px-6;
+}
+.portraitArch {
+  @apply relative h-[350px] overflow-hidden rounded-t-[200px] rounded-b-[22px] bg-[#e8d3bd] sm:h-[460px] md:h-[430px] lg:h-[510px];
+  background-image: radial-gradient(
+    ellipse at 70% 10%,
+    #f2e8d7,
+    transparent 75%
+  );
+}
+.archCircle {
+  @apply absolute top-14 -right-16 h-64 w-64 rounded-full border border-[#d0bb9e] sm:h-80 sm:w-80;
+}
+.portraitArch::before {
+  content: "";
+  @apply absolute top-[26%] -left-16 h-52 w-52 rounded-full bg-[#8db36a]/15;
+}
+.portrait {
+  @apply absolute -bottom-[19px] left-0 h-auto w-full max-w-none;
+  transform: scale(1.2);
+  transform-origin: bottom center;
+}
+.flowerDecoration {
+  @apply absolute top-3 -right-1 flex h-[80px] w-[80px] items-center justify-center rounded-full bg-[#eaf0df] text-[#8ba565] lg:-right-3 lg:h-[100px] lg:w-[100px];
+}
+.flowerDecoration > svg {
+  @apply h-[60px] w-[60px] lg:h-[76px] lg:w-[76px];
+}
+.heartDecoration {
+  @apply absolute top-16 left-0 -rotate-12 text-[#e0607a];
+}
+.heartDecoration > svg {
+  @apply h-10 w-10;
+}
+.portraitNote {
+  @apply absolute bottom-10 -left-1 flex items-center gap-3 rounded-[16px] bg-[#fffdf8] px-4 py-3 shadow-[0_8px_35px_#5c534818] sm:-left-5 sm:px-5 sm:py-4;
+}
+.portraitNote > svg {
+  @apply text-[#e0607a];
+}
+.portraitNote > span {
+  @apply text-[10px] leading-[1.6] text-[#6a6c61] sm:text-xs;
+}
+.portraitNote strong {
+  @apply font-bold text-[#3b3b47];
+}
+.smallSparkle {
+  @apply absolute right-4 bottom-6 text-5xl text-[#8db36a] sm:right-0;
+}
+.discover {
+  @apply col-span-full flex items-center justify-center gap-2 pt-3 text-[11px] text-[#787c6f];
+}
+.promiseStrip {
+  @apply flex flex-wrap items-center justify-center gap-x-12 gap-y-5 border-y border-[#dae0d0] bg-[#edf0e4] px-5 py-6 text-xs text-[#55604a] sm:text-sm;
+}
+.promiseStrip > span {
+  @apply flex items-center gap-3;
+}
+.promiseStrip svg {
+  color: #7a995c;
+  stroke-width: 1.5;
+}
+.promiseStrip > span:nth-child(2) svg {
+  color: #ce7183;
+}
+.section {
+  @apply py-16 sm:py-20 lg:py-24;
+  scroll-margin-top: 95px;
+}
+.sectionIntro {
+  @apply mx-auto mb-9 max-w-[650px] text-center sm:mb-12;
+}
+.eyebrow {
+  @apply mb-4 block text-[9px] font-extrabold tracking-[1.7px] text-[#6d8058] sm:text-[10px];
+}
+.sectionIntro p {
+  @apply mx-auto mt-5 max-w-[570px];
+}
+.servicesGrid {
+  @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4;
+}
+.serviceCard {
+  @apply relative rounded-[20px] border border-[#e6e4d7] bg-[#fffdf8] p-6;
+}
+.serviceIcon {
+  @apply mb-6 flex h-12 w-12 items-center justify-center rounded-[15px] bg-[#edf2e5] text-[#77935b];
+}
+.serviceCard:nth-child(3) .serviceIcon {
+  @apply bg-[#fbe8ec] text-[#d16b80];
+}
+.serviceNumber {
+  @apply absolute top-7 right-6 text-[10px] text-[#b1b7a5];
+}
+.site .serviceCard h3 {
+  font-size: 21px;
+}
+.serviceCard p {
+  @apply mt-3;
+  font-size: 13px;
+}
+.site .reassurance {
+  @apply mt-7 flex items-center justify-center gap-2 text-center text-xs text-[#7b816f];
+}
+.reassurance svg {
+  @apply shrink-0 text-[#7f9b62];
+}
+.processSection {
+  @apply bg-[#ede5d7] py-16 sm:py-20 lg:py-24;
+  scroll-margin-top: 90px;
+}
+.stepsGrid {
+  @apply grid gap-8 sm:grid-cols-3 sm:gap-7 lg:gap-16;
+}
+.step {
+  @apply relative text-center;
+}
+.stepNumber {
+  @apply mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full border border-[#b6c5a2] bg-[#f8f5ec] text-[#6c8555];
+  font-family: "GF Fraunces", Georgia, serif;
+  font-size: 24px;
+}
+.step p {
+  @apply mx-auto mt-3 max-w-[340px];
+  font-size: 13px;
+}
+.processClosing {
+  @apply mt-10 flex flex-col items-center justify-center gap-3 border-t border-[#d8d1c1] pt-7 text-center sm:flex-row;
+}
+.processClosing > svg {
+  @apply text-[#7b9361];
+}
+.site .processClosing p {
+  font-size: 12px;
+  color: #77756b;
+}
+.processClosing strong {
+  @apply font-semibold text-[#4e5549];
+}
+.about {
+  @apply grid gap-12 py-16 sm:py-20 md:grid-cols-2 md:items-center md:gap-14 lg:gap-24 lg:py-28;
+  scroll-margin-top: 85px;
+}
+.aboutVisual {
+  @apply relative mx-auto w-full max-w-[410px] px-4 pb-7;
+}
+.aboutPhoto {
+  @apply relative h-[360px] overflow-hidden rounded-[22px] bg-[#dce4cf] sm:h-[420px];
+}
+.aboutPhoto img {
+  @apply absolute -bottom-5 left-0 h-auto w-full max-w-none;
+  transform: scale(1.17);
+  transform-origin: bottom;
+}
+.aboutQuote {
+  @apply absolute right-0 -bottom-3 flex items-center gap-4 rounded-[18px] border border-[#e9e1d4] bg-[#fffdf8] px-5 py-4 shadow-[0_8px_30px_#3b3b4710];
+}
+.aboutQuote svg {
+  @apply text-[#e0607a];
+}
+.aboutQuote > span {
+  font-family: "GF Fraunces", Georgia, serif;
+  font-size: 18px;
+  line-height: 1.4;
+}
+.aboutFlower {
+  @apply absolute -top-7 -left-2 -rotate-12 text-[#91a875];
+}
+.aboutCopy h2 {
+  @apply mb-6;
+}
+.aboutCopy p + p {
+  @apply mt-4;
+}
+.credentials {
+  @apply mt-6 flex flex-col gap-3 border-t border-[#e0e3d4] pt-5;
+}
+.credentials > span {
+  @apply flex items-center gap-2 text-xs text-[#59674d];
+}
+.credentials svg {
+  @apply text-[#7c9a5f];
+}
+.instagramLink {
+  @apply mt-6 inline-flex items-center gap-2 text-xs font-bold;
+  color: #476f61 !important;
+}
+.trustSection {
+  @apply border-y border-[#e2e6d7] bg-[#f0f2e8] py-16 sm:py-20;
+}
+.trustPrinciples {
+  @apply grid gap-8 text-center sm:grid-cols-3 sm:gap-10;
+}
+.trustPrinciples svg {
+  @apply mx-auto mb-4 text-[#809a65];
+  stroke-width: 1.4;
+}
+.trustPrinciples > div:nth-child(3) svg {
+  color: #d57889;
+}
+.trustPrinciples p {
+  @apply mx-auto mt-3 max-w-[270px];
+  font-size: 13px;
+}
+.reviews {
+  @apply grid gap-5 sm:grid-cols-2;
+}
+.reviews figure {
+  @apply m-0 rounded-[20px] border border-[#dfe4d3] bg-[#fffdf8] p-7;
+}
+.reviews figure > svg {
+  color: #809a65;
+}
+.reviews blockquote {
+  @apply my-5 text-base;
+}
+.reviews figcaption {
+  @apply text-sm font-bold;
+}
+.reviews small {
+  @apply mt-1 block text-xs font-normal;
+}
+.faqSection {
+  @apply grid gap-7 py-16 sm:py-20 lg:grid-cols-[.8fr_1.2fr] lg:gap-20 lg:py-24;
+}
+.faqSection .sectionIntro {
+  @apply mb-0 lg:mx-0 lg:text-left;
+}
+.faq {
+  @apply border-t border-[#dce0d1];
+}
+.faqItem {
+  @apply border-b border-[#dce0d1];
+}
+.site .faqItem h3 {
+  font-family: "GF Nunito", Arial, sans-serif;
+}
+.faqTrigger {
+  @apply flex w-full items-center justify-between gap-5 border-0 bg-transparent py-5 text-left text-sm font-bold text-[#4c5446];
+  letter-spacing: 0;
+}
+.faqTrigger svg {
+  @apply shrink-0 text-[#7d9564];
+  transition: transform 0.2s;
+}
+.faqTrigger[data-state="open"] svg {
+  transform: rotate(45deg);
+}
+.faqContent p {
+  @apply pb-5 pr-7;
+  font-size: 13px;
+}
+.contact {
+  @apply relative mb-16 overflow-hidden rounded-[22px] bg-[#e3eacf] px-5 py-12 text-center sm:mb-20 sm:px-10 sm:py-16;
+}
+.contact h2 {
+  font-size: clamp(36px, 4.5vw, 53px);
+}
+.contact > p {
+  @apply mx-auto mt-5 mb-7 max-w-[460px];
+}
+.contactDetails {
+  @apply mt-6 flex flex-wrap items-center justify-center gap-4 text-[11px] text-[#626e55];
+}
+.contactDetails > span,
+.contactDetails > a {
+  @apply flex items-center gap-1.5;
+}
+.contactFlower {
+  @apply absolute -top-5 -right-6 text-[#a8b98b]/60 sm:top-7 sm:right-8;
+}
+.footer {
+  @apply border-t border-[#e0e3d6] bg-[#f6f2e9] pt-8 pb-24 sm:pt-10;
+}
+.footer > .container {
+  @apply flex flex-col items-start gap-5 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between;
+}
+.footer p {
+  font-size: 12px;
+}
+.footer > .container > a:last-of-type {
+  color: #71885b;
+}
+.footerBottom {
+  @apply flex w-full flex-col gap-4 border-t border-[#e0e3d6] pt-5 text-[10px] text-[#777d6f] sm:flex-row sm:justify-between;
+}
+.footerBottom a {
+  @apply flex items-center gap-1.5;
+}
+.floating {
+  @apply fixed right-5 bottom-5 z-30 flex h-12 min-w-12 items-center justify-center gap-2 rounded-full border border-[#568d80] bg-primary px-3 shadow-[0_5px_20px_#3b3b4726] sm:px-5;
+  color: #203c35 !important;
+  bottom: max(20px, env(safe-area-inset-bottom));
+}
+.floating > span {
+  @apply hidden text-xs font-extrabold sm:inline;
+}
+@media (max-width: 359px) {
+  .headerCta {
+    display: none;
+  }
+  .heroTag {
+    font-size: 7px;
+    letter-spacing: 0.5px;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .faqTrigger svg {
+    transition: none;
+  }
+}
